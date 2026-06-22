@@ -1,7 +1,7 @@
 from claude_agent_sdk import list_sessions, rename_session
-from datetime import datetime
 
-sessions = list_sessions(directory=r"D:\github\far-force", limit=5)
+from datetime import datetime
+sessions = list_sessions(directory="/path/to/project", limit=5)
 
 for session in sessions:
     modified = datetime.fromtimestamp(session.last_modified / 1000).strftime("%Y-%m-%d %H:%M")

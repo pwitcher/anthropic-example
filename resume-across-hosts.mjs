@@ -1,6 +1,5 @@
 import { listSessions, renameSession } from "@anthropic-ai/claude-agent-sdk";
-
-const sessions = await listSessions({ dir: "D:\\github\\far-force", limit: 5 });
+const sessions = await listSessions({ dir: "/path/to/project", limit: 5 });
 
 for (const session of sessions) {
   const modified = new Date(session.lastModified).toLocaleString();
@@ -9,7 +8,7 @@ for (const session of sessions) {
 
 if (sessions.length > 0) {
     await renameSession(sessions[0].sessionId, "Auth module refactor – JWT approach", {
-    dir: "D:\\github\\far-force"
+    dir: "/path/to/project"
     });
   console.log(`Renamed session ${sessions[0].sessionId}`);
 }
